@@ -783,8 +783,8 @@
 .block.cpzx .region .left ul {
   /*padding: .1rem 0;*/
   height: 100%;
-  height: calc(100% - .1rem);
-  height: -webkit-calc(100% - .1rem);
+  height: calc(100% - 0.1rem);
+  height: -webkit-calc(100% - 0.1rem);
   padding-right: 0.1rem;
   background: #003399;
 }
@@ -820,9 +820,6 @@
   left: 0;
   top: 0;
   z-index: 0;
-}
-
-.block.cpzx .region .left#nav_tabs {
 }
 
 .block.cpzx .region .left .nav_tabs_fixed {
