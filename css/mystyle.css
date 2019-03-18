@@ -47,19 +47,22 @@
 .block.gsjs .content-box-2 {
   padding: 1rem 0.3rem 0 0.3rem;
 }
-
+.block.gsjs .content-box-2 .pic{
+    padding-top: .3rem;
+}
 .block.gsjs .content-box-2 img {
   margin-bottom: 0.24rem;
 }
 
 .block.gsjs .content-box-3 {
-  padding: 0 0.3rem;
+  padding: .76rem 0.3rem 0 .3rem;
 }
 
 .block.gsjs .content-box-3 ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-top: .3rem;
 }
 
 .block.gsjs .content-box-3 ul li {
@@ -81,6 +84,7 @@
 
 .block.gsjs .content-box-4 .swiper-container {
   height: 3.13rem;
+  padding-top: .22rem;
 }
 
 .block.gsjs .content-box-4 .swiper-container .swiper-slide {
@@ -240,9 +244,6 @@
   text-align: center;
   font-weight: bold;
   padding-top: 0.55rem;
-}
-
-.block.news ul {
 }
 
 .block.news ul li {
