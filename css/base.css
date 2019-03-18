@@ -1,0 +1,316 @@
+/*.main {*/
+/*width: 6.9rem;*/
+/*margin: auto;*/
+/*}*/
+
+
+.block{
+    position: relative;
+    top: 1.15rem;
+    bottom: .96rem;
+}
+.header {
+    width: 100%;
+    height: 1.15rem;
+    background-color: #ffffff;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.header .main {
+    position: relative;
+    z-index: 999;
+    background-color: #ffffff;
+    padding: .13rem .3rem;
+}
+
+.header .main:after {
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.header .logo {
+    float: left;
+}
+
+.header .logo a {
+    display: block;
+    width: 1.06rem;
+    height: .9rem;
+    background: url("../images/case/logo.png") center / cover no-repeat;
+}
+
+.header .logo a h1 {
+    display: none;
+}
+
+.header .forward {
+    width: 3.99rem;
+    height: .6rem;
+    background: url("../images/case/head_qi.png") center / cover no-repeat;
+    font-size: .22rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: .6rem;
+    position: absolute;
+    left: .4rem;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: SourceHanSansCN-Regular, sans-serif;
+}
+
+.header .menu {
+    width: .6rem;
+    height: .6rem;
+    background: url("../images/case/icon-menu.png") center / cover no-repeat;
+    margin: .15rem 0;
+    float: right;
+}
+
+.nav {
+    position: absolute;
+    left: 0;
+    top: -500%;
+    width: 100%;
+    padding-bottom: .24rem;
+    background: #003399;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+}
+
+.nav.nav-show {
+    opacity: 1;
+    visibility: visible;
+    top: 1.15rem;
+    transition: all .3s;
+}
+
+.nav ul li {
+    width: 100%;
+    font-size: 0;
+    height: .75rem;
+    line-height: .75rem;
+    text-align: center;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.nav ul li a {
+    font-size: .3rem;
+    color: #fefefe;
+    display: block;
+    font-family: SourceHanSansCN-Regular, sans-serif;
+}
+.nav ul li.on a{
+    color: #ff0000;
+}
+.nav > a {
+    display: block;
+    width: 3rem;
+    height: .75rem;
+    margin: auto;
+    font-size: .3rem;
+    line-height: .75rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: #ff0000;
+    border-radius: 5px;
+    margin-top: .24rem;
+    position: relative;
+    padding-left: .5rem;
+}
+
+.nav > a img {
+    width: .41rem;
+    height: .41rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: .63rem;
+    margin: auto;
+}
+
+/**/
+/**/
+/**/
+/**/
+
+
+.see_more {
+    display: block;
+    width: 2.70rem;
+    height: .62rem;
+    margin: auto;
+    background: #ff0000;
+    position: relative;
+    padding: 1px;
+}
+
+.see_more:link,
+.see_more:active,
+.see_more:visited,
+.see_more:hover {
+    background: #ff0000;
+}
+
+
+.see_more span {
+    font-size: .28rem;
+    color: #ffffff;
+    font-family: SourceHanSansCN-Regular, sans-serif;
+    line-height: .62rem;
+    padding: .1rem .38rem;
+    border-right: 1px solid #ffffff;
+}
+
+.see_more img {
+    width: .25rem;
+    height: .27rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: .25rem;
+    margin: auto;
+}
+
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+
+
+.company {
+    width: 100%;
+    height: 6.5rem;
+    background: #00283c;
+    padding: 0 1.1rem;
+    margin-bottom: .96rem;
+    position: relative;
+}
+
+#to_top {
+    width: .66rem;
+    height: 1.2rem;
+    background: url("../images/case/to_top.png") center / cover no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -.84rem;
+    margin: auto;
+}
+
+.company-tel {
+    width: 5.30rem;
+    height: .62rem;
+    line-height: .62rem;
+    border-radius: .1rem;
+    border: solid 2px #ffffff;
+    text-align: center;
+    font-size: 0;
+}
+
+.company:before {
+    content: '';
+    display: block;
+    padding-top: .9rem;
+}
+
+.company-tel span {
+    font-size: .3rem;
+    color: #ffffff;
+    font-family: SourceHanSansCN-Regular, sans-serif;
+}
+
+.company-tel a {
+    font-size: .3rem;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.company-address {
+    text-align: center;
+    font-size: .24rem;
+    line-height: .36rem;
+    color: #eeeeee;
+    font-family: SourceHanSansCN-Regular, sans-serif;
+    padding-top: .54rem;
+}
+
+.company-address p {
+    padding-bottom: .06rem;
+}
+
+.company-wechat {
+    font-size: 0;
+    text-align: center;
+    padding-top: .3rem;
+}
+
+.company-wechat img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.company-wechat p {
+    font-size: .22rem;
+    color: #dddddd;
+    line-height: .22rem;
+    padding-top: .18rem;
+    font-family: SourceHanSansCN-Regular, sans-serif;
+}
+
+/**/
+/**/
+
+
+.footer {
+    width: 100%;
+    height: .96rem;
+    background: url("../images/case/footer-bj.png") center / cover no-repeat;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #ff0000;
+    z-index: 99;
+}
+
+.footer ul li {
+    width: 25%;
+    height: 100%;
+    float: left;
+    text-align: center;
+
+}
+
+.footer ul li a {
+    display: block;
+}
+
+.footer ul li:nth-child(3) a img {
+    width: .48rem;
+    height: .36rem;
+    margin: .15rem 0 .08rem 0;
+}
+
+.footer ul li a img {
+    width: .4rem;
+    height: .4rem;
+    margin: .09rem 0;
+}
+
+.footer ul li a p {
+    font-size: .24rem;
+    color: #eeeeee;
+    text-align: center;
+    line-height: .26rem;
+}
