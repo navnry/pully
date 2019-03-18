@@ -1,181 +1,72 @@
+
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-    <style>
-        html, body {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-        }
+<head>
+<meta charset="UTF-8">
+<title>导航滚动到一定高底后吸顶，锚点定位自动跟随</title>
+<style type="text/css">
+		*{margin: 0; padding: 0;}
+		.topbox{ height: 500px; background-color: #313131; }
+		.section-content{ border-bottom: 5px solid #0000FF; min-height: 500px; background: #eee; width: 1200px; margin: auto; line-height: 500px; text-align: center; }
+		.nav-height{ position:relative; height: 50px;}
+.nav-wrap { width: 100%;height: 50px;background: #fff;}
+.nav-wrap.navFix{position: fixed;top: 0;left: 0;  box-shadow: 0 0 5px rgba(0,0,0, 0.2);border-bottom:1px solid #e3e3e3\9; z-index: 99999;} 
+.nav-wrap ul {padding: 0;margin: 0 auto; width: 1200px; display: block; border-bottom: 2px solid #eee;}
+.nav-wrap.navFix ul{ border-bottom: 0;}
+.nav-wrap li { display: inline-block; text-align: left;height: 50px; line-height: 50px; float: left;}
+.nav-wrap li a {display: block;padding: 0 20px;font-size:20px; color: #333; text-decoration: none;}
+.nav-wrap li a:hover{color: #4680d1;}
+.nav-wrap li a.active {border-bottom:2px solid #4680d1;color: #4680d1;}
+.nav-mobile {display: none;font-weight: bold;width: 100%;}
+.click-me {width: 150px;height: 30px; background: #4680d1;color: white; text-align: center;line-height: 30px;}
+.click-me a {display: block;color: white;}
 
-        .container {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            padding-bottom: 800px;
-        }
-
-        header {
-            background: lightblue;
-            width: 100%;
-            height: 80px;
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-
-        .mark {
-            height: 20px;
-            position: fixed;
-            width: 80%;
-            top: 80px;
-            /*background: #fff;*/
-            /*color: red;*/
-            margin-left: 10%;
-            background: lightseagreen;
-        }
-
-        .content {
-            width: 80%;
-            margin: 140px auto 0;
-            background: lightsalmon;
-        }
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .title {
-            background: lightseagreen;
-            height: 20px;
-        }
-    </style>
+		</style>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<!-- <script src='js/nav.js'></script> -->
 </head>
 <body>
-<div class="container">
-    <header></header>
-    <div class="mark"></div>
-    <div class="content">
-        <ul>
-            <li>
-                <p class="title">task01</p>
-                <div class="aaa" attr="task01">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate ex facilis nostrum rerum.
-                    Aliquam asperiores debitis laborum laudantium, magni nemo nihil nisi perferendis porro rem
-                    repellendus rerum tempore velit voluptas?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, consequuntur error expedita explicabo
-                    incidunt maiores placeat praesentium quasi quidem vero! Accusantium deleniti enim molestias nesciunt
-                    provident quibusdam repudiandae sit, ut.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aperiam, cum debitis dolorem
-                    dolores magni neque obcaecati optio repellat rerum sed velit. Consequatur nemo omnis quam qui
-                    reprehenderit unde voluptate.
-                </div>
-            </li>
-            <li>
-                <p class="title">task02</p>
-                <div class="aaa" attr="task02">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum dicta enim fugiat impedit,
-                    iste itaque labore laudantium non perspiciatis provident recusandae repellat sequi vel velit
-                    voluptate voluptatum? Repellat, voluptatibus?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, adipisci alias animi at
-                    delectus dolor doloribus enim, ex itaque modi omnis, porro quae quia quis tempore vero voluptatem
-                    voluptates voluptatibus.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit hic libero quae quos
-                    repellat. Ab aliquam aliquid deleniti distinctio dolorem dolores excepturi laudantium
-                    mollitia non perspiciatis qui quos, sit tenetur.
-                    Accusamus asperiores aspernatur blanditiis corporis cupiditate deserunt dolor dolorem ea
-                    exercitationem facilis hic in iure laboriosam laborum necessitatibus nemo neque nihil
-                    numquam officia, omnis perferendis quidem quisquam sequi vitae voluptas.
-                    At cupiditate dolorum, ducimus eius error ex hic nam neque nobis odit reiciendis sunt
-                    ullam. At aut dolor doloribus esse harum impedit laudantium nostrum obcaecati suscipit
-                    tempore temporibus veritatis, voluptate.
-                </div>
-            </li>
-            <li>
-                <p class="title">task03</p>
-                <div class="aaa" attr="task03">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur harum hic iste
-                    nesciunt rem vel vero. Ab architecto dolores illo laborum modi nam neque pariatur quos
-                    repudiandae sunt! Laboriosam!
-                    Ad aut deleniti error esse ipsam laborum maiores, molestiae numquam perferendis placeat
-                    repellat, similique sint totam! Ab aliquam aliquid, earum eveniet ex magnam minima
-                    perferendis, quisquam saepe sequi, sunt voluptatem.
-                    Alias, cum cupiditate debitis libero provident quasi veniam veritatis voluptatum?
-                    Accusantium ad amet architecto asperiores consequatur culpa cumque error ex facilis illo
-                    iste laboriosam mollitia, nihil provident quaerat, similique velit.
-                    Excepturi laudantium modi nostrum possimus veritatis, voluptas. Explicabo magni nesciunt
-                    tempora unde! Consequatur cum enim exercitationem iste iure magni, mollitia nemo similique
-                    totam. Esse labore mollitia nam quae quos sunt?
-                    A aliquid, aperiam cum, debitis, delectus dolore labore maxime nemo nobis nostrum quas quia
-                    sit ullam. Animi at autem consectetur culpa eum incidunt molestiae, perferendis repellendus
-                    sequi, vel voluptas voluptate?
-                    Ad, aliquid consequuntur corporis est eveniet, harum hic incidunt molestiae molestias
-                    natus, neque officiis provident quis veritatis voluptate! Distinctio ea eius esse obcaecati
-                    provident quam quis quod repellendus saepe voluptas.
-                    Esse neque similique veritatis. Ad animi aperiam at eum fuga fugiat iure, iusto natus quas
-                    voluptate. Ipsam, nam, nulla. Consequuntur distinctio eius, eligendi expedita explicabo
-                    fugit illum ipsum magni mollitia.
-                </div>
-            </li>
-            <li>
-                <p class="title">task04</p>
-                <div class="aaa" attr="task04">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quae quis velit? At eveniet
-                    expedita fugiat quis saepe. Deleniti eaque facilis in omnis suscipit! A dolor est facere facilis
-                    hic!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolor dolorem dolores eveniet
-                    excepturi minus officiis quisquam reiciendis saepe tempora? Aut consectetur cupiditate doloremque
-                    ipsa laborum quo. Assumenda, corporis, non!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium cumque excepturi ipsam
-                    ipsum molestias mollitia natus officia pariatur, provident quisquam, suscipit? Doloremque earum ex
-                    exercitationem minus odio optio possimus?
-                </div>
-            </li>
-        </ul>
-    </div>
+<div class="topbox"></div>
+<div class="nav-height" id="navHeight">
+<nav class="nav-wrap" id="nav-wrap">
+<div class="nav-mobile">Click</div>
+<ul class="clearfix">
+<li><a class="active" href="#section1">nav1</a></li>
+<li><a class="" href="#section2">nav2</a></li>
+<li><a class="" href="#section3">nav3</a></li>
+<li><a class="" href="#section4">nav4</a></li>
+</ul>
+</nav>
 </div>
-<script src="js/jquery-1.11.3.min.js"></script>
+<div id="section1" class="section-content">
+1
+</div>
+<div id="section2" class="section-content">
+2
+</div>
+<div id="section3" class="section-content">
+3
+</div>
+<div id="section4" class="section-content">
+4
+</div>
+<div style="height: 1000px;background: #f5f5f5;">footer</div>
+
 <script>
-    $(window).load(function () {
-            //获取第一个标题元素距离页面顶端的距离
-        var top = $(".title:first").offset().top;
-        //移动页面，使第一个title元素到mark的位置,并将title中的文字给mark
-        window.scrollTo(0, top - 80);
-        $(".mark").html($(".title:first").html());
+		//内容信息导航吸顶
+			$(document).ready(function(){ 
+			var navHeight= $("#navHeight").offset().top; 
+			var navFix=$("#nav-wrap"); 
+			$(window).scroll(function(){ 
+				if($(this).scrollTop()>navHeight){ 
+					navFix.addClass("navFix"); 
+				} 
+				else{ 
+					navFix.removeClass("navFix"); 
+				} 
+				}) 
+			})
 
-        /**
-         * 滚动事件
-         */
-        var titles = $(".title");
-        var obj = {};
-        for (var i = 0; i < titles.length; i++) {
-            obj["top" + i] = $(titles[i]).offset().top - 80;
-        }
-        $(window).scroll(function () {
-            //如果页面向上拉伸的距离大于等于哪个title距离顶部的距离，就将哪个title中的文字给mark
-            for (var i = 0; i < titles.length; i++) {
-                if ($(window).scrollTop() >= obj["top" + i] && $(window).scrollTop() <= obj["top" + (i + 1)]) {
-                    $(".mark").html($(".title").eq(i).html());
-                    $(".mark").css("height", "20px");
-                } else if ($(window).scrollTop() >= obj["top" + (titles.length - 1)]
-                    && $(window).scrollTop() <= obj["top" + (titles.length - 1)] + parseFloat($(".title").eq(titles.length - 1).next('div').height())) {
-                    $(".mark").html($(".title").eq(titles.length - 1).html());
-                    $(".mark").css("height", "20px");
-                } else if ($(window).scrollTop() <= obj.top0) {
-                    $(".mark").html("");
-                    $(".mark").css("height", "0");
-                } else if ($(window).scrollTop() >= obj["top" + (titles.length - 1)] + parseFloat($(".title").eq(titles.length - 1).next('div').height())) {
-                    $(".mark").html("");
-                    $(".mark").css("height", "0");
-                }
-            }
-        });
-
-    });
-</script>
+		</script>
 </body>
 </html>
