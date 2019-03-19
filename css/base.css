@@ -69,11 +69,19 @@
 .header .menu {
     width: .6rem;
     height: .6rem;
-    background: url("../images/case/icon-menu.png") center / cover no-repeat;
+    background: url("../images/case/menu_normal.png") center / 80% no-repeat;
     margin: .15rem 0;
     float: right;
+    border: 1px solid #003399;
+    border-radius: 100%
 }
-
+.header .menu.menu_se{
+    width: .6rem;
+    height: .6rem;
+    background: url("../images/case/menu_close.png") center / 80% no-repeat;
+    margin: .15rem 0;
+    float: right;   border: 1px solid #003399; border-radius: 100%
+}
 .nav {
     position: absolute;
     left: 0;
