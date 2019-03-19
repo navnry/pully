@@ -506,9 +506,8 @@
 <script src="js/nav_tabar.js"></script>
 <script>
     $(function () {
-        var w = parseInt($("html").css("font-size")) / 37
+        var w = parseInt($("html").css("font-size")) / 37;
         var swardSwiper = new Swiper(".content-5 .swiper-container", {
-            // slidesPerView: 'auto',
             speed: 800,
             slidesPerView: 2,
             spaceBetween: w * 10,
@@ -520,7 +519,6 @@
     window.onresize = function () {
         bannerSwiper.update();
         productSwiper.update();
-        awardSwiper.update();
     };
     $(".content-9 .tabs li").click(function () {
         var index = $(this).index();
