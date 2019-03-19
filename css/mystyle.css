@@ -57,7 +57,7 @@
 }
 
 .block.gsjs .content-box-3 {
-    padding: 0.76rem 0.3rem 0 0.3rem;
+    padding: 0.76rem 0.3rem .5rem 0.3rem;
 }
 
 .block.gsjs .content-box-3 ul {
@@ -80,7 +80,7 @@
 }
 
 .block.gsjs .content-box-4 {
-    padding: 0 0.3rem 1.39rem 0.3rem;
+    padding: 1rem 0.3rem 1.39rem 0.3rem;
     background: url("../images/index/bj01.png") center / cover no-repeat;
 }
 
@@ -314,15 +314,19 @@
     line-clamp: 3;
     -webkit-box-orient: vertical;
 }
-
+.block.news ul li .context .con i{
+    color: #ff0000;
+    font-size: .26rem;
+}
 .block.news ul li .context .con span {
-    display: block;
+    display: inline-block;
     font-size: 0.24rem;
     line-height: 0.24rem;
     color: #333333;
     position: absolute;
-    bottom: 0;
     right: 0;
+    bottom: 0;
+    text-align: right;
 }
 
 .block.news .region {
@@ -453,7 +457,7 @@
     line-height: 0.6rem;
     background-color: #ffffff;
     border-radius: 0.1rem;
-    border: solid 2px #003399;
+    border: solid .02rem #003399;
     font-size: 0.3rem;
     color: #003399;
     margin-bottom: 0.3rem;
@@ -566,7 +570,7 @@
     height: 0.6rem;
     background-color: #e4edff;
     border-radius: 0.1rem;
-    border: solid 2px #003399;
+    border: solid .02rem #003399;
     font-size: 0.3rem;
     color: #003399;
     text-align: center;
@@ -781,6 +785,7 @@
 .block.cpzx .region {
     padding-right: 0.2rem;
     padding-bottom: 1.44rem;
+    padding-top: .3rem;
 }
 
 .block.cpzx .region:after {
@@ -864,6 +869,7 @@
     border-radius: 5px;
     border: solid 0.1rem #e9f0ff;
     position: relative;
+    margin-bottom: .25rem;
 }
 
 .block.cpzx .region .right ul li .pic {
@@ -1061,7 +1067,7 @@
     background-color: #e4edff;
     box-shadow: 2px 2px 3px 0 rgba(99, 19, 19, 0.2);
     border-radius: 0.05rem;
-    padding: 0.3rem;
+    padding: 0.3rem 0 .3rem .3rem;
     margin-top: 0.3rem;
 }
 
@@ -1078,7 +1084,7 @@
 .block.cpxq .region .num ul li .con {
     float: left;
     font-size: 0;
-    width: 2.2rem;
+    width: 2.5rem;
     padding-left: 0.25rem;
 }
 
