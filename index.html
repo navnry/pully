@@ -7,7 +7,8 @@
     <title>湘工普力</title>
     <link rel="icon" href="images/case/favicon.ico">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="fonts/font/SourceHanSansCN-Regular/SourceHanSansCN-Regular.css">   <link rel="stylesheet" href="fonts/iconfont/iconfont.css">
+    <link rel="stylesheet" href="fonts/font/SourceHanSansCN-Regular/SourceHanSansCN-Regular.css">
+    <link rel="stylesheet" href="fonts/iconfont/iconfont.css">
     <link rel="stylesheet" href="fonts/iconfont/iconfont.css">
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/base.css">
@@ -196,9 +197,16 @@
             <p>湖南湘工普力重工有限公司(原湖南湘工重工有限公司)位于素有“中国工程机械之都”美誉的历史名城——长沙，成立于2004年。我们是一家专业从事混凝土搅拌泵的研发、制造、销售和售后服务的公司。</p>
             <p>湘工普力在世界各地越来越受欢迎。帮助您赚钱是我们的承诺，“诚信铸就品牌，专业铸就品质，坚持撼动未来。”“打造专业企业，打造国际知名品牌，始终是湘工普力的目标。”</p>
         </div>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"></div>
+        <div class="award">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"
+                         style="background: url(images/other/ry01.jpg) center / cover no-repeat"></div>
+                    <div class="swiper-slide"
+                         style="background: url(images/other/ry02.jpg) center / cover no-repeat"></div>
+                    <div class="swiper-slide"
+                         style="background: url(images/other/ry03.jpg) center / cover no-repeat"></div>
+                </div>
             </div>
         </div>
         <a href="" class="see_more">
@@ -497,6 +505,20 @@
 <script src="js/swiper.min.js"></script>
 <script src="js/nav_tabar.js"></script>
 <script>
+    $(function () {
+        var w = parseInt($("html").css("font-size"))
+        var t = w / 37
+        // console.log(t);
+        var swardSwiper = new Swiper(".content-5 .swiper-container", {
+            // slidesPerView: 'auto',
+            speed: 800,
+            slidesPerView: 2,
+            spaceBetween: t * 10,
+            loop: true
+        });
+    })
+</script>
+<script>
     window.onresize = function () {
         bannerSwiper.update();
         productSwiper.update();
@@ -523,13 +545,10 @@
             prevEl: '.content-box-2 .swiper-button-prev',
         },
     });
-    var awardSwiper = new Swiper(".content-5 .swiper-container", {
-        slidesPerView: 'auto',
-        speed: 800,
-    });
+
+
     var guowaiSwiper = new Swiper('.content-6 .swiper-container', {
         effect: 'coverflow',
-        // grabCursor: true,
         loop: true,
         speed: 800,
         centeredSlides: true,
@@ -549,7 +568,6 @@
     var hezuoSwiper = new Swiper(".content-10 .swiper-container", {
         slidesPerView: 'auto',
         speed: 800,
-        spaceBetween: ""
     });
 
     $("#to_top").click(function () {
