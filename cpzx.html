@@ -1,18 +1,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta
-            name="viewport"
-            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>产品中心</title>
     <link rel="icon" href="images/case/favicon.ico"/>
     <link rel="stylesheet" href="css/reset.css"/>
-    <link
-            rel="stylesheet"
-            href="fonts/font/SourceHanSansCN-Regular/SourceHanSansCN-Regular.css"
-    />
+    <link rel="stylesheet" href="fonts/font/SourceHanSansCN-Regular/SourceHanSansCN-Regular.css"/>
+    <link rel="stylesheet" href="fonts/iconfont/iconfont.css">
     <link rel="stylesheet" href="css/swiper.min.css"/>
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/mystyle.css"/>
@@ -29,7 +25,10 @@
         <div class="forward">
             20年专注混凝土输送泵研发与制造
         </div>
-        <div class="menu"></div>
+        <div class="menu">
+            <i class="iconfont normal">&#xe623;</i>
+            <i class="iconfont close">&#xe61e;</i>
+        </div>
     </div>
     <div class="nav">
         <ul>
@@ -62,13 +61,13 @@
         <div class="region">
             <div class="left" id="nav_tabs">
                 <ul>
-                    <li class="on">
+                    <li>
                         <a href="">二次结构泵</a>
                     </li>
                     <li>
                         <a href="">搅拌拖泵</a>
                     </li>
-                    <li>
+                    <li class="on">
                         <a href="">搅拌车载泵</a>
                     </li>
                     <li>
@@ -95,7 +94,7 @@
                             <p>W1卧式二次结构泵</p>
                             <span>整机重量：750kg</span>
                             <span>扬程：20米</span>
-                            <a href="">查看详情</a>
+                            <a href="detail.html">查看详情</a>
                         </div>
                     </li>
                     <li>
@@ -144,21 +143,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </div>
-    <div class="company">
-        <div id="to_top"></div>
-        <div class="company-tel">
-          <span>24小时服务电话 </span
-          ><a href="tel:400-1177-521">400-1177-521</a>
-        </div>
-        <div class="company-address">
-            <p>公司总部地址:</p>
-            <p>湖南省长沙市天心区暮云工业园伊莱克斯大道18号远航广场D-804</p>
-        </div>
-        <div class="company-wechat">
-            <img src="images/case/wechat.png" alt=""/>
-            <p>长按保存图片，在微信中扫描识别二维码</p>
         </div>
     </div>
 </div>
@@ -196,17 +180,13 @@
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/nav_tabar.js"></script>
 <script>
-    $(document).ready(function () {
+    $(function () {
         var headHeight = $(".header").height();
         console.log(headHeight);
         var navHeight = $("#nav_tabs").offset().top - headHeight;
         var navFix = $("#nav_tabs ul");
         $(window).scroll(function () {
-            if ($(this).scrollTop() > navHeight) {
-                navFix.addClass("nav_tabs_fixed");
-            } else {
-                navFix.removeClass("nav_tabs_fixed");
-            }
+            $(this).scrollTop() > navHeight ? navFix.addClass("nav_tabs_fixed") : navFix.removeClass("nav_tabs_fixed");
         });
     });
 </script>

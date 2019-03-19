@@ -4,11 +4,12 @@
 /*}*/
 
 
-.block{
+.block {
     position: relative;
     top: 1.15rem;
     bottom: .96rem;
 }
+
 .header {
     width: 100%;
     height: 1.15rem;
@@ -69,18 +70,48 @@
 .header .menu {
     width: .6rem;
     height: .6rem;
-    background: url("../images/case/menu_normal.png") center / 80% no-repeat;
+    /*background: url("../images/case/menu_normal.png") center / 80% no-repeat;*/
     margin: .15rem 0;
     float: right;
     border: 1px solid #003399;
-    border-radius: 100%
+    border-radius: 100%;
+    position: relative;
+    text-align: center;
+    line-height: .6rem;
+
 }
-.header .menu.menu_se{
-    width: .6rem;
-    height: .6rem;
-    background: url("../images/case/menu_close.png") center / 80% no-repeat;
-    margin: .15rem 0;
-    float: right;   border: 1px solid #003399; border-radius: 100%
+.header .menu i{
+    font-size: .3rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: #003399;
+}
+.header .menu.menu_se {
+    /*width: .6rem;*/
+    /*height: .6rem;*/
+    /*background: url("../images/case/menu_close.png") center / 80% no-repeat;*/
+    /*margin: .15rem 0;*/
+    /*float: right;*/
+    /*border: 1px solid #003399;*/
+    /*border-radius: 100%*/
+}
+
+.header .menu .close {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.header .menu.menu_se .close {
+    visibility: visible;
+    opacity: 1;
+    transition: all .3s;
+}
+.header .menu.menu_se .normal{
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
 }
 .nav {
     position: absolute;
@@ -117,9 +148,11 @@
     display: block;
     font-family: SourceHanSansCN-Regular, sans-serif;
 }
-.nav ul li.on a{
+
+.nav ul li.on a {
     color: #ff0000;
 }
+
 .nav > a {
     display: block;
     width: 3rem;
@@ -223,7 +256,7 @@
     height: .62rem;
     line-height: .62rem;
     border-radius: .1rem;
-    border: solid 2px #ffffff;
+    border: solid .02rem #ffffff;
     text-align: center;
     font-size: 0;
 }
