@@ -506,14 +506,12 @@
 <script src="js/nav_tabar.js"></script>
 <script>
     $(function () {
-        var w = parseInt($("html").css("font-size"))
-        var t = w / 37
-        // console.log(t);
+        var w = parseInt($("html").css("font-size")) / 37
         var swardSwiper = new Swiper(".content-5 .swiper-container", {
             // slidesPerView: 'auto',
             speed: 800,
             slidesPerView: 2,
-            spaceBetween: t * 10,
+            spaceBetween: w * 10,
             loop: true
         });
     })
